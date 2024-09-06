@@ -30,6 +30,10 @@
     cursor: pointer;
     color: var(--twitter-color);
   }
+
+.post__header{
+    height:auto;
+}
   
   .post__headerDescription {
     margin-bottom: 10px;
