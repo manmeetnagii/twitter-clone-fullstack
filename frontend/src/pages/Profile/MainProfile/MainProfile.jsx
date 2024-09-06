@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./MainProfile.css";
+import "./mainProfile.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CenterFocusWeakIcon from "@mui/icons-material/CenterFocusWeak";
 import LockResetIcon from "@mui/icons-material/LockReset";
