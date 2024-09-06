@@ -1,0 +1,81 @@
+{
+    "sidebar" : {
+        "home": "Lar",
+        "explorer": "Explorador",
+        "notification": "Notificações",
+        "message" : "Robô de bate-papo",
+        "bookmark": "Marca páginas",
+        "list": "Lista",
+        "more": "Mais",
+        "profile": "Perfil",
+        "settings": "Configurações",
+         "add_exisiting_account": "Adicionar conta existente",
+        "logout": "Sair",
+        "more_page" : "Bem-vindo a mais páginas",
+        "list_page" : "Bem-vindo à página da lista",
+        "notification_page" : "Bem-vindo à página de notificação",
+        "message_page" : "Bem-vindo à página de mensagens",
+        "bookmark_page" : "Bem-vindo à página de favoritos",
+        "explore_page" : "Bem-vindo à página de exploração"
+    },
+    "tweetbox" : {
+        "Whats_happening?" : "O que está acontecendo?",
+        "Uploading_Image" : "Carregando imagem",
+        "Image_Uploaded" : "Imagem carregada",
+        "tweet" : "Tweet",
+        "start" : "Começar",
+        "stop" : "Parar",
+        "Uploading_Audio" : "Carregando áudio",
+        "Audio_Uploaded" : "O áudio foi carregado"
+
+    },
+    "widget" : {
+        "Search_Twitter" : "Pesquisar twitter",
+        "Whats_happening" : "O que está acontecendo"
+    },
+    "language": "Linguagem",
+    "settings" : {
+        "verifyNumber" : "Verifique seu número de celular",
+        "desc" : "Enviaremos uma senha de uso único (OTP) para o número de celular fornecido para verificar sua conta.",
+        "btn" : "Enviar",
+        "enterOtp" : "Insira OTP",
+        "submit" : "Enviar",
+        "timeRemaining" : "Tempo restante",
+        "resendOtp" : "Reenviar OTP",
+        "verifyEmail" : "Verifique seu e-mail",
+        "desc1" : "Enviaremos uma senha de uso único (OTP) para o e-mail",
+        "desc2" : "para verificar sua conta.",
+            "loggedIn" : "Onde você está logado."
+            
+    },
+    "chatbot" : {
+        "heading" : "Robô de bate-papo",
+         "placeholder" : "Pesquise tweets sobre qualquer tópico, por exemplo, críquete, SpaceX, política."
+    },
+    "profile" : {
+        "editProfile" : "Editar perfil",
+        "editProfilee" : "Editar Perfil",
+        "save" : "Salvar",
+        "name" : "Nome",
+        "bio" : "Biografia",
+        "location": "Localização",
+        "website" :  "Site",
+        "birthDate" : "Data de nascimento",
+        "edit" : "Editar",    
+        "addYourDOB" : "Adicione sua data de nascimento",
+        "switchProf" : "Mudar para profissional",
+        "editDOB" : "Editar data de nascimento?",
+        "para1" : "Isso só pode ser alterado algumas vezes.",
+        "para2" : "Certifique-se de informar a idade",
+        "para3" : " da pessoa que está usando a conta.",
+        "cancel" : "CANCELAR"
+    },
+    "weatherMap" : {
+        "weatherConditions" : "Condições climáticas",
+        "temp" : "Temperatura",
+        "desc" : "Descrição",
+        "hum" : "Umidade",
+        "windSpeed" : "Velocidade do vento",
+        "weather" : "Clima"
+    }
+}
