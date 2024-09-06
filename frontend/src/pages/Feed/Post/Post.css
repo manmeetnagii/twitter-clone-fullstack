@@ -3,7 +3,7 @@
     align-items: flex-start;
     border-bottom: 1px solid var(--twitter-background);
     padding-bottom: 10px;
-    height: auto;
+    max-height: 700px;
   }
   
   .post__body {
