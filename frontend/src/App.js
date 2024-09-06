@@ -14,7 +14,7 @@ import Lists from "./pages/Lists/Lists";
 import Profile from "./pages/Profile/Profile";
 import More from "./pages/More/More";
 import Notifications from "./pages/Notifications/Notifications";
-
+//app.js
 function App() {
   return (
     <div className="app">
