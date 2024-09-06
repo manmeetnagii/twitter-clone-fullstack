@@ -73,7 +73,8 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
         toast.info("Smartphone users can only access the website between 10am to 1pm IST")
         setIsLoading(false);
       }
-      try {
+      else{
+        try {
         const appVerifier = window.recaptchaVerifier;
         const confirmationResult = await signInWithPhoneNumber(
           auth,
@@ -87,6 +88,7 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
         setIsLoading(false);
       } finally {
         setIsLoading(false);
+      }
       }
     } else {
       setError("Invalid Phone Number");
