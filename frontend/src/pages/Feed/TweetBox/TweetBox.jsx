@@ -104,6 +104,7 @@ function TweetBox() {
       if (audioUrl) {
         if(phoneNumber){
           toast.info("Audio uploads are only available to users registered with an email.")
+          return;
         }
         
           toast.info("Audio upload requires email verification.");
@@ -255,6 +256,7 @@ function TweetBox() {
       setShowRecorder(true);
     } else {
       toast.info("Audio recordings are only allowed between 2 PM to 7 PM IST.");
+      return
     }
   };
 
