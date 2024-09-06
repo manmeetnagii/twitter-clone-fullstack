@@ -1,0 +1,80 @@
+{
+    "sidebar" : {
+        "home": "Maison",
+        "explorer": "Explorer",
+        "notification": "Notifications",
+        "message" : "Chatbot",
+        "bookmark": "Signets",
+        "list": "Listes",
+        "more": "Plus",
+        "profile": "Profil",
+        "settings": "Paramètres",
+        "add_exisiting_account": "Ajouter un compte existant",
+        "logout": "Se déconnecter de",
+        "more_page" : "Bienvenue sur plus de page",
+        "list_page" : "Bienvenue sur la page de liste",
+        "notification_page" : "Bienvenue sur la page de notification",
+        "message_page" : "Bienvenue sur la page de messages",
+        "bookmark_page" : "Bienvenue sur la page des signets",
+        "explore_page" : "Bienvenue sur la page d'exploration"
+    },
+    "tweetbox" : {
+        "Whats_happening?" : "Ce qui se passe?",
+        "Uploading_Image" : "Téléchargement de l'image",
+        "Image_Uploaded" : "Image téléchargée",
+        "tweet" : "Tweet",
+        "start" : "Commencer",
+        "stop" : "Arrêt",
+        "Uploading_Audio" : "Téléchargement de l'audio",
+        "Audio_Uploaded" : "Audio téléchargé"
+
+    },
+    "widget" : {
+        "Search_Twitter" : "Recherche sur twitter",
+        "Whats_happening" : "Ce qui se passe"
+    },
+    "language": "Langue",
+    "settings" : {
+        "verifyNumber" : "Vérifiez votre numéro de téléphone portable",
+        "desc" : "Nous vous enverrons un mot de passe à usage unique (OTP) au numéro de téléphone mobile que vous avez fourni pour vérifier votre compte.",
+        "btn" : "Envoyer",
+        "enterOtp" : "Entrez OTP",
+        "submit" : "Soumettre",
+        "timeRemaining" : "Temps restant",
+        "resendOtp" : "Renvoyer l'OTP",
+        "verifyEmail" : "Vérifiez votre e-mail",
+        "desc1" : "Nous vous enverrons un mot de passe à usage unique (OTP) à l'adresse e-mail",
+        "desc2" : "pour vérifier votre compte.",
+        "loggedIn" : "Où vous êtes connecté."
+    },
+    "chatbot" : {
+        "heading" : "Chatbot",
+         "placeholder" : "Recherchez des tweets sur n'importe quel sujet, par exemple le cricket, SpaceX, la politique."
+    },
+    "profile" : {
+        "editProfile" : "Modifier le profil",
+        "editProfilee" : "Edit Profile",
+        "save" : "Sauvegarder",
+        "name" : "Nom",
+        "bio" : "Biographie",
+        "location": "Emplacement",
+        "website" :  "Site web",
+        "birthDate" : "Date de naissance",
+        "edit" : "Modifier",    
+        "addYourDOB" : "Ajoutez votre date de naissance",
+        "switchProf" : "Passer au professionnel",
+        "editDOB" : "Modifier la date de naissance ?",
+        "para1" : "Cela ne peut être modifié que quelques fois.",
+        "para2" : "Assurez-vous d'entrer l'âge de",
+        "para3" : "la personne utilisant le compte.",
+        "cancel" : "ANNULER"
+    },
+    "weatherMap" : {
+        "weatherConditions" : "Conditions météorologiques",
+        "temp" : "Température",
+        "desc" : "Description",
+        "hum" : "Humidité",
+        "windSpeed" : "Vitesse du vent",
+        "weather" : "Météo"
+    }
+}

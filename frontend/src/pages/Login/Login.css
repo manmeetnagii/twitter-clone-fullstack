@@ -1,6 +1,6 @@
 .login-container {
     display: flex;
-    flex: 1;
+    height: 100vh;
     width: 100vw;
 
 
@@ -8,13 +8,33 @@
 
 .form-container {
     flex: 1;
-    padding: 50px;
+    padding: 20px 50px;
     margin: 10px;
     /* margin-left: -50px; */
     align-content: center;
-
-
-
+}
+/* Spinner.css */
+.spinner {
+    border: 4px solid #f3f3f3; /* Light grey */
+    border-top: 4px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 9px;
+    height: 9px;
+    animation: spin 1s linear infinite;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+.otp-container {
+    flex: 1;
+    padding: 0px 50px 0px 50px;
+    margin: 10px;
+ 
+    /* margin-left: -50px; */
+    align-content: center;
 }
 
 .form-box {
@@ -26,7 +46,8 @@
 .Twitter-img {
     color: skyblue;
     max-width: 50%;
-
+    min-height: 100vh;
+    
 }
 
 .input-form {
@@ -38,6 +59,11 @@
 h1 {
     font-size: 50px
 }
+.heading2,
+h1 {
+    font-size: 50px;
+    text-wrap: nowrap;
+}
 
 .heading1,
 h3 {
@@ -48,19 +74,15 @@ h3 {
 
 
 .image-container {
-    flex: 2;
-    margin-left: -100px;
-
+    flex: 1.5;
+    height: 100%;
+overflow: hidden;
 
 }
 
 .image {
     max-width: 100%;
     height: 100%;
-    /* margin-left: -50px; */
-
-
-
 }
 
 input {
@@ -79,6 +101,49 @@ input {
     width: 70%;
     border-radius: 8px;
     padding: 14px;
+    border: none;
+    outline: none;
+}
+
+.country{ 
+    width: 50px;
+    margin-left: 1rem;
+    background-color: transparent;
+    border: none;
+    outline: none;
+}
+
+.PhoneInputInput{
+    background: transparent;
+    outline: none;
+    border: none;
+    margin-bottom: 1rem;
+}
+.PhoneInput {
+	/* This is done to stretch the contents of this component. */
+	display: flex;
+	align-items: center;
+    justify-content: center;
+    padding: 0px;
+    margin-left: 10px;
+	background: transparent;
+}
+
+.number-div {
+    background-color: #E8F0FE;
+    width: 77%;
+    height: 2.8rem;
+    border-radius: 8px;
+    margin-top: 1rem;
+    border: none;
+    display: flex;
+  
+    align-items: center;
+    outline: none;
+}
+
+.number-input{
+    background-color: transparent;
     border: none;
     outline: none;
 }
@@ -113,6 +178,121 @@ input {
     outline: none;
     margin-bottom: 20px;
     margin-top: 15px;
+    cursor: pointer;
+}
+.btnw {
+    background-color: rgb(92, 199, 241);
+    width: 75%;
+    margin-right: 20px;
+    padding: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 8px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    gap: 10px;
+    margin-bottom: 20px;
+    margin-top: 15px;
+    cursor: pointer;
+}
+.btn-phone {
+    background-color: rgb(0, 230, 19);
+    width: 75%;
+    margin-right: 20px;
+
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 17px;
+    text-decoration: none !important;
+    border: none;
+    display: flex;
+    align-items: center;
+    outline: none;
+    margin-bottom: 20px;
+    justify-content: center;
+    gap: 10px;
+    cursor: pointer;
+}
+
+.randomPass{
+    padding: 15px;
+    width: 100%;
+}
+
+.btn2 {
+    background-color: rgb(0, 0, 0);
+    width: 75%;
+    color: white;
+    margin-right: 20px;
+    padding: 14px;
+    border-radius: 8px;
+    font-size: 17px;
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    margin-top: 15px;
+}
+.btn3 {
+    background-color: rgb(0, 0, 0);
+    width: 30%;
+    color: white;
+    margin-right: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-right-radius: 0px;
+    border-bottom-right-radius: none;
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+.copy-btn {
+    background-color: #5CC7F1;
+    width: 30%;
+    color: rgb(0, 0, 0);
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-top-left-radius: 0px;
+    border-bottom-left-radius: none;
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+    font-size: 14px;
+    border: none;
+    outline: none;
+}
+
+
+.pass{
+    display: flex;
+    align-items: center;
+    height: 3rem;
+    margin-top: 1.5rem;
+    justify-content: space-between;
+    background-color: rgb(239, 239, 239);
+    border-radius: 20px;
+}
+
+.passwordd{
+    background-color: rgb(239, 239, 239);
+    width: 30%;
+    color: rgb(0, 0, 0);
+    margin-right: 20px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 500;
+   
+    font-size: 14px;
+    border: none;
+    outline: none;
 }
 
 .g-btn {
@@ -120,13 +300,10 @@ input {
     height: 40px !important;
     line-height: 40px !important;
     font-size: 15px !important;
-    width: 70% !important;
+    width: 80% !important;
     margin: 10px;
 }
 
-.google-button {
-    margin-top: 5%;
-}
 
 .g-btn>div,
 .g-btn>div>svg {
