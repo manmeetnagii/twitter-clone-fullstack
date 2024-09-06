@@ -70,7 +70,7 @@ app.post("/verify-emailOtp", verifyEmailOtp);
 
 app.post("/send-emailOtp", sendEmailOtp);
 
-//mongoose
+
 mongoose
   .connect(uri)
   .then(console.log("Database Connected"))
