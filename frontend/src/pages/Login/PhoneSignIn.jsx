@@ -67,12 +67,12 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
     setIsLoading(true);
     console.log(value);
 
-    if(!runBetween2To7PMIST()){
-      toast.info("Smartphone users can only access the website between 10am to 1pm IST")
-      setIsLoading(false);
-    }
 
     if (validatePhoneNumber()) {
+      if(!runBetween2To7PMIST()){
+        toast.info("Smartphone users can only access the website between 10am to 1pm IST")
+        setIsLoading(false);
+      }
       try {
         const appVerifier = window.recaptchaVerifier;
         const confirmationResult = await signInWithPhoneNumber(
