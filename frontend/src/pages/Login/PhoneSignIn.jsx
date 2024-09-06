@@ -8,6 +8,7 @@ import { RecaptchaVerifier, signInWithPhoneNumber } from "firebase/auth";
 import { auth } from "../../context/firebase";
 import axios from "axios";
 import "react-phone-number-input/style.css";
+import { Bounce, toast, ToastContainer } from "react-toastify";
 import PhoneInput from "react-phone-number-input";
 
 function Mobile({ userBrowser, userDevice, userOS, userIP }) {
@@ -44,10 +45,32 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
     return regexp.test(value);
   };
 
+  function runBetween2To7PMIST() {
+    const now = new Date();
+
+    const UTCtoIST = 5.5 * 60 * 60 * 1000;
+    const ISTTime = new Date(now.getTime() + UTCtoIST);
+
+    const hours = ISTTime.getUTCHours();
+    const minutes = ISTTime.getUTCMinutes();
+
+    if ( (hours > 10 && hours < 13) || (hours === 10 && minutes >= 0) || (hours === 13 && minutes === 0)) {
+      return true;
+    } 
+    else {
+      return false;
+    }
+  }
+
   const handleSendOtp = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     console.log(value);
+
+    if(runBetween2To7PMIST){
+      toast.info("Smartphone users can only access the website between 10am to 1pm IST")
+      setIsLoading(false);
+    }
 
     if (validatePhoneNumber()) {
       try {
@@ -61,11 +84,13 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
         setSuccess(true);
       } catch (error) {
         setError(error.message);
+        setIsLoading(false);
       } finally {
         setIsLoading(false);
       }
     } else {
       setError("Invalid Phone Number");
+      setIsLoading(false);
     }
   };
 
@@ -113,7 +138,7 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
             throw error;
           }
         };
-
+        
         const data = await registerUser(user, systemInfo);
         if (data) {
           console.log(data);
@@ -121,9 +146,11 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
         }
       } catch (error) {
         setError(error.message);
+        setIsLoading(false);
       }
     } else {
       setError("Please enter a six-digit OTP code");
+      setIsLoading(false);
     }
   };
 
@@ -196,6 +223,11 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
         </div>
       </div>
       <div id="recaptcha-container"></div>
+      <ToastContainer
+          position="bottom-right"
+          theme="dark"
+          transition={Bounce}
+        />
     </div>
   );
 }
