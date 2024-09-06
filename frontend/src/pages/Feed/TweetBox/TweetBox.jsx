@@ -105,10 +105,10 @@ function TweetBox() {
         if(phoneNumber){
           toast.info("Audio uploads are only available to users registered with an email.")
         }
-        else{
+        
           toast.info("Audio upload requires email verification.");
           await handleEmailSubmit();
-        }
+        
       } 
       else {
         const response = await fetch(`https://backend2-4wgi.onrender.com/post`, {
