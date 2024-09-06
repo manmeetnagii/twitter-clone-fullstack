@@ -160,7 +160,7 @@
     align-items: center;
     gap: 5px;
   }
-
+/* link */
   .link {
     color: var(--twitter-color);
     cursor: pointer;
