@@ -1,0 +1,79 @@
+{
+    "sidebar" : {
+        "home": "Hogar",
+        "explorer": "Explorador",
+        "notification": "Notificaciones",
+        "message" : "Bot de chat",
+        "bookmark": "Marcador",
+        "list": "Liza",
+        "more": "Más",
+        "profile": "Perfil",
+        "settings": "Ajustes",
+        "add_exisiting_account": "Agregar cuenta existente",
+          "logout": "Cerrar sesión",
+          "more_page" : "Bienvenida a más página",
+          "list_page" : "Bienvenida a la página de lista",
+          "notification_page" : "Bienvenida a la página de notificación",
+          "message_page" : "Bienvenida a la página de mensajes",
+          "bookmark_page" : "Bienvenida a la página de favoritos",
+          "explore_page" : "Bienvenido a explorar la página"
+    },
+    "tweetbox" : {
+        "Whats_happening?" : "Lo que está sucediendo?",
+        "Uploading_Image" : "Subiendo imagen",
+        "Image_Uploaded" : "Imagen cargada",
+        "Uploading_Audio" : "Subiendo audio",
+        "Audio_Uploaded" : "Audio subido",
+        "tweet" : "Piar",
+        "start" : "Comenzar",
+        "stop" : "Detener"
+    },
+    "widget" : {
+        "Search_Twitter" : "Buscar en twitter",
+        "Whats_happening" : "Lo que está sucediendo"
+    },
+    "language" : "Idioma",
+    "settings" : {
+        "verifyNumber" : "Verifique su número de móvil",
+        "desc" : "Le enviaremos una contraseña de un solo uso (OTP) al número de teléfono móvil que proporcionó para verificar su cuenta.",
+        "btn" : "Enviar",
+        "enterOtp" : "Ingresar OTP",
+        "submit" : "Entregar",
+        "timeRemaining" : "Tiempo restante",
+        "resendOtp" : "Reenviar OTP",
+        "verifyEmail" : "Verifique su correo electrónico",
+        "desc1" : "Le enviaremos una contraseña de un solo uso (OTP) al correo electrónico",
+        "desc2" : "para verificar su cuenta.",
+        "loggedIn" : "Dónde estás conectado."
+    },
+    "chatbot" : {
+        "heading" : "Bot de chat",
+         "placeholder" : "Busque tweets sobre cualquier tema, por ejemplo, cricket, SpaceX, política."
+    },
+    "profile" : {
+        "editProfile" : "Editar perfil",
+        "editProfilee" : "Editar Perfil",
+        "save" : "Ahorrar",
+        "name" : "Nombre",
+        "bio" : "Biografía",
+        "location": "Ubicación",
+        "website" :  "Sitio web",
+        "birthDate" : "Fecha de nacimiento",
+        "edit" : "Editar",    
+        "addYourDOB" : "Añade tu fecha de nacimiento",
+        "switchProf" : "Cambiar a profesional",
+        "editDOB" : "¿Editar fecha de nacimiento?",
+        "para1" : "Esto sólo se puede cambiar unas cuantas veces.",
+        "para2" : "Asegúrese de ingresar la edad de",
+        "para3" : "la persona que usa la cuenta.",
+        "cancel" : "CANCELAR"
+    },
+    "weatherMap" : {
+        "weatherConditions" : "Condiciones climáticas",
+        "temp" : "Temperatura",
+        "desc" : "Descripción",
+        "hum" : "Humedad",
+        "windSpeed" : "Velocidad del viento",
+        "weather" : "Clima"
+    }
+}

@@ -1,0 +1,82 @@
+{
+    "sidebar" : {
+        "home": "Home",
+        "explorer": "Explore",
+        "notification": "Notifications",
+        "message" : "Chat Bot",
+        "bookmark": "Bookmarks",
+        "list": "Lists",
+        "more": "More",
+        "profile": "Profile",
+        "settings": "Settings",
+         "add_exisiting_account": "Add an exisiting account",
+         "logout": "Logout",
+         "more_page" : "Welcome to more page",
+         "list_page" : "Welcome to list page",
+         "notification_page" : "Welcome to notification page",
+         "message_page" : "Welcome to messages page",
+         "bookmark_page" : "Welcome to bookmark page",
+         "explore_page" : "Welcome to explore page"
+
+    },
+    "tweetbox" : {
+        "Whats_happening?" : "What's happening?",
+        "Uploading_Image" : "Uploading Image",
+        "Image_Uploaded" : "Image Uploaded",
+        "Uploading_Audio" : "Uploading Audio",
+        "Audio_Uploaded" : "Audio Uploaded",
+        "tweet" : "Tweets",
+        "start" : "Start",
+        "stop" : "Stop"
+
+    },
+    "widget" : {
+        "Search_Twitter" : "Search Twitter",
+        "Whats_happening" : "What's happening"
+    },
+    "language": "Language",
+    "settings" : {
+        "verifyNumber" : "Verify your mobile number",
+        "desc" : "We will send a One-Time Password (OTP) to the mobile number you provided to verify your account.",
+        "btn" : "Send",
+        "enterOtp" : "Enter OTP",
+        "submit" : "Submit",
+        "timeRemaining" : "Time remaining",
+        "resendOtp" : "Resend OTP",
+        "enterEmail" : "Enter email",
+        "verifyEmail" : "Verify your email",
+        "desc1" : "We will send a One-Time Password (OTP) to the email",
+        "desc2" : "to verify your account.",
+        "loggedIn" : "Where you're logged in."
+    },
+    "chatbot" : {
+        "heading" : "Chat Bot",
+        "placeholder" : "Search tweets on any topic, e.g., cricket, SpaceX, politics."
+    },
+    "profile" : {
+        "editProfile" : "Edit profile",
+        "editProfilee" : "Edit Profile",
+        "save" : "Save",
+        "name" : "Name",
+        "bio" : "Bio",
+        "location": "Location",
+        "website" :  "Website",
+        "birthDate" : "Birth Date",
+        "edit" : "Edit",    
+        "addYourDOB" : "Add your date of birth",
+        "switchProf" : "Switch to professional",
+        "editDOB" : "Edit date of birth?",
+        "para1" : "This can only be changed a few times.",
+        "para2" : "Make sure you enter the age of the",
+        "para3" : "person using the account.",
+        "cancel" : "CANCEL"
+    },
+    "weatherMap" : {
+        "weatherConditions" : "Weather Conditions",
+        "temp" : "Temperature",
+        "desc" : "Description",
+        "hum" : "Humidity",
+        "windSpeed" : "Wind Speed",
+        "weather" : "Weather"
+    }
+}
