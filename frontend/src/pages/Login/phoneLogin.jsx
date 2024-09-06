@@ -8,6 +8,7 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
+import { Bounce, toast, ToastContainer } from "react-toastify";
 import "./Login.css";
 
 function Mobile({ userBrowser, userDevice, userOS, userIP }) {
@@ -45,9 +46,12 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
     return regexp.test(value);
   };
 
-  const handleSendOtp = async (e) => {
+   const handleSendOtp = async (e) => {
     e.preventDefault();
     setIsLoading(true);
+    if(runBetween2To7PMIST){
+      toast.info("Smartphone users can only access the website between 10am to 1pm IST")
+    }
     if (validatePhoneNumber()) {
       try {
         const appVerifier = window.recaptchaVerifier;
@@ -190,6 +194,11 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
         </div>
       </div>
       <div id="recaptcha-container"></div>
+        <ToastContainer
+          position="bottom-right"
+          theme="dark"
+          transition={Bounce}
+        />
     </div>
   );
 }
