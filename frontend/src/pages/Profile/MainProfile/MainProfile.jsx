@@ -278,7 +278,7 @@ const MainProfile = ({ user }) => {
                   src={
                     loggedInUser[0]?.coverImage
                       ? loggedInUser[0]?.coverImage
-                      : "https://www.proactivechannel.com/Files/BrandImages/Default.jpg"
+                      : "/defaultCoverImg.jpg"
                   }
                   alt=""
                   className="coverImage"

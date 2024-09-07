@@ -13,7 +13,7 @@
 
 .coverImageContainer {
   position: relative;
-  height: 100%;
+  min-height: 150px;
   width: 100%;
 }
 
