@@ -77,10 +77,10 @@ const Settings = () => {
     setIsloading(true);
     try {
       const response = await axios.post(
-        "https://backend2-4wgi.onrender.com/send-phoneOtp",
+        "https://twitter-backend-main.onrender.com/send-phoneOtp",
         { phoneNumber }
       );
-      // console.log("Response:", response.data);
+      console.log("Response:", response.data);
       setIsloading(false);
       setShowOtpModal(true);
     } catch (error) {
@@ -99,7 +99,7 @@ const Settings = () => {
     };
     try {
       const response = await axios.post(
-        "https://backend2-4wgi.onrender.com/verify-phoneOtp",
+        "https://twitter-backend-main.onrender.com/verify-phoneOtp",
         { bodyData }
       );
       if (response.data.success === true) {
@@ -121,7 +121,7 @@ const Settings = () => {
     const userEmail = user.email;
     try {
       const response = await axios.post(
-        "https://backend2-4wgi.onrender.com/send-emailOtp",
+        "https://twitter-backend-main.onrender.com/send-emailOtp",
         { userEmail }
       );
       // console.log("Response:", response.data);
@@ -142,7 +142,7 @@ const Settings = () => {
 
     try {
       const response = await axios.post(
-        "https://backend2-4wgi.onrender.com/verify-emailOtp",
+        "https://twitter-backend-main.onrender.com/verify-emailOtp",
         { bodyData }
       );
 

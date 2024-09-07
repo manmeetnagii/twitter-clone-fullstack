@@ -29,10 +29,11 @@ function Post({ p }) {
             </h3>
           </div>
           <div className="post__headerDescription">
-            <p>{post}</p>
+            <p className="post_text">{post}</p>
           </div>
         </div>
-        <img src={photo} alt="" width="500" />
+              <img src={photo} alt="" width="500" />
+      
         {audio && (
           <audio controls>
             <source src={audio} type="audio/mp3" />

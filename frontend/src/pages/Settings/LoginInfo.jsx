@@ -12,7 +12,7 @@ const LoginInfo = () => {
       const email = user.user.email;
       const phoneNumber = user.user.phoneNumber;
       const loginInfo = async () => {
-        const res = await axios.post("https://backend2-4wgi.onrender.com/loginInfo", {email: email, phoneNumber:phoneNumber});
+        const res = await axios.post("https://twitter-backend-main.onrender.com/loginInfo", {email: email, phoneNumber:phoneNumber});
         setData(res.data);
       };
       loginInfo();

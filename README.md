@@ -48,9 +48,16 @@ Here is what you need to be able to run Meta Drive.
 ```bash
   npm install
 ```
-#### 5. Create .env file and copy the environment variables in .env.example. Setup these environment variables
+#### 5. Create .env file and copy the environment variables in .env.example. Setup your own environment variables
+
 - PORT = 
 - MONGO_URI =
+- X_RAPID_API =
+- CLOUDINARY_NAME =
+- CLOUDINARY_API_KEY =
+- CLOUDINARY_API_SECRET_KEY =
+- EMAIL =
+- PASSWORD =
 
 #### 6. Start the server by nodemon
 

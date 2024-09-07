@@ -19,7 +19,7 @@ const OTPCountdown = ({ phoneNumber }) => {
   const handlePhoneNumberSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post("https://backend2-4wgi.onrender.com/send-otp", {
+      const response = await axios.post("https://twitter-backend-main.onrender.com/send-otp", {
         phoneNumber,
       });
       console.log("Response:", response.data);

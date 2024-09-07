@@ -95,7 +95,7 @@ export default function EditProfile({ user, loggedInUser }) {
       };
 
       if (user.email) {
-        fetch(`https://backend2-4wgi.onrender.com/userUpdates/?email=${user?.email}`, {
+        fetch(`https://twitter-backend-main.onrender.com/userUpdates/?email=${user?.email}`, {
           method: "PATCH",
           headers: {
             "content-type": "application/json",
@@ -109,7 +109,7 @@ export default function EditProfile({ user, loggedInUser }) {
           });
         } else {
           // console.log("Phonee")
-          fetch(`https://backend2-4wgi.onrender.com/userUpdates/?phoneNumber=${phoneNumber}`, {
+          fetch(`https://twitter-backend-main.onrender.com/userUpdates/?phoneNumber=${phoneNumber}`, {
             method: "PATCH",
             headers: {
               "content-type": "application/json",

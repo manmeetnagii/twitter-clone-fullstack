@@ -1,5 +1,4 @@
 import otpGenerator from "otp-generator";
-import twilio from "twilio";
 import dotenv from "dotenv";
 import nodemailer from "nodemailer";
 import Mailgen from "mailgen";
@@ -9,31 +8,37 @@ import posts from "../models/post.js";
 import OtpModel from "../models/otp.js";
 import { otpVerification } from "../otpValidate.js";
 import systemInfo from "../models/systemInfo.js";
-import { v2 as cloudinary } from 'cloudinary';
+import { v2 as cloudinary } from "cloudinary";
 import { UAParser } from "ua-parser-js";
 
 dotenv.config();
 
-const twilioClient = new twilio(
-  process.env.TWILIO_ACCOUNT_SID,
-  process.env.TWILIO_AUTH_TOKEN
-);
-
 export const register = async (req, res) => {
-  const { username,phoneNumber, name, email } = req.body.user;
-  const result = await users.create({ username,phoneNumber, name, email });
+  const { username, phoneNumber, name, email } = req.body.user;
+  const result = await users.create({ username, phoneNumber, name, email });
   res.send(result);
 };
 
 export const registerSystemInfo = async (req, res) => {
   console.log(req.body.systemInfo);
-  const { email, browser, os, ip, device, phoneNumber, city, country, state } = req.body.systemInfo;
-  const result = await systemInfo.create({ email,phoneNumber, browser, os, ip, device, country, state, city });
+  const { email, browser, os, ip, device, phoneNumber, city, country, state } =
+    req.body.systemInfo;
+  const result = await systemInfo.create({
+    email,
+    phoneNumber,
+    browser,
+    os,
+    ip,
+    device,
+    country,
+    state,
+    city,
+  });
   res.send(result);
 };
 
 export const user = async (req, res) => {
-  const user = await users.find();  
+  const user = await users.find();
   res.send(user);
 };
 
@@ -41,25 +46,23 @@ export const loggedInUser = async (req, res) => {
   const email = req.query.email;
   const phoneNumber = req.query.phoneNumber;
   let user;
-  if(!phoneNumber){
+  if (!phoneNumber) {
     user = await users.find({ email: email });
-  }
-  else{
+  } else {
     user = await users.find({ phoneNumber: phoneNumber });
   }
   res.send(user);
 };
 
 export const userPost = async (req, res) => {
-  console.log("USERPOST",req.query)
+  console.log("USERPOST", req.query);
   const email = req.query.email;
   const phoneNumber = req.query.phoneNumber;
   let post;
-  if(!phoneNumber){
+  if (!phoneNumber) {
     post = await posts.find({ email: email });
-  }
-  else{
-    post = await posts.find({ phoneNumber: phoneNumber});
+  } else {
+    post = await posts.find({ phoneNumber: phoneNumber });
   }
   res.send(post);
 };
@@ -72,8 +75,16 @@ export const getPost = async (req, res) => {
 
 export const pst = async (req, res) => {
   try {
-    const { post, profileImage, photo, username, phoneNumber, name, email, audio } =
-      req.body;
+    const {
+      post,
+      profileImage,
+      photo,
+      username,
+      phoneNumber,
+      name,
+      email,
+      audio,
+    } = req.body;
 
     // Create a new post
     const result = await posts.create({
@@ -86,7 +97,7 @@ export const pst = async (req, res) => {
       audio,
       phoneNumber,
     });
-    console.log(result)
+    console.log(result);
     // Send a success response
     res.status(201).json(result);
   } catch (error) {
@@ -144,12 +155,14 @@ export const userUpdates = async (req, res) => {
     let filter = {};
     if (phoneNumber) {
       filter.phoneNumber = phoneNumber; // Clean phone number if necessary
-      console.log("phoneFilter", filter)
+      console.log("phoneFilter", filter);
     } else if (email) {
       filter.email = email;
-      console.log("emailFilter", filter.email)
+      console.log("emailFilter", filter.email);
     } else {
-      return res.status(400).json({ message: 'Email or phone number is required.' });
+      return res
+        .status(400)
+        .json({ message: "Email or phone number is required." });
     }
 
     // Extract profile data from the request body
@@ -161,25 +174,26 @@ export const userUpdates = async (req, res) => {
 
     // Update the document
     const result = await users.updateOne(filter, updateDoc, options);
-    const count = await posts.countDocuments({email:email});
-    const count2 = await posts.countDocuments({phoneNumber:phoneNumber});
+    const count = await posts.countDocuments({ email: email });
+    const count2 = await posts.countDocuments({ phoneNumber: phoneNumber });
 
     // Check if the count is not zero
     if (count > 0 && count2 > 0) {
-      console.log(email)
+      console.log(email);
       console.log(`There are ${count} documents in the collection.`);
       await posts.updateMany(filter, updateDoc, options);
     } else {
-      console.log('No documents found in the collection.');
+      console.log("No documents found in the collection.");
     }
-    
 
     res.status(200).json(result);
   } catch (error) {
-    console.error('Error updating user:', error);
-    res.status(500).json({ error: 'An error occurred while updating the user.' });
+    console.error("Error updating user:", error);
+    res
+      .status(500)
+      .json({ error: "An error occurred while updating the user." });
   }
-}
+};
 
 export const sendPhoneOtp = async (req, res) => {
   try {
@@ -199,12 +213,19 @@ export const sendPhoneOtp = async (req, res) => {
       { upsert: true, new: true, setDefaultsOnInsert: true }
     );
 
-    await twilioClient.messages.create({
-      body: `Your OTP is: ${otp}`,
-      to: phoneNumber,
-      from: process.env.TWILIO_PHONE_NUMBER,
+    await fetch('https://gateway.seven.io/api/sms', {
+      method: 'POST',
+      headers: {
+        'X-Api-Key': process.env.X_RAPID_API, // Use environment variable for API key
+        'Accept': 'application/json',
+        'Content-Type': 'application/x-www-form-urlencoded'
+      },
+      body: new URLSearchParams({
+        to: phoneNumber,  // Use data from req.body or fallback to default
+        from: 'Twitter Clone App',
+        text: `Your OTP is: ${otp}`
+      })
     });
-
     return res.status(200).json({
       success: true,
       msg: otp,
@@ -375,14 +396,13 @@ export const systeminfo = (req, res) => {
 export const loginInfo = async (req, res) => {
   const { email } = req.body;
   let { phoneNumber } = req.body;
-  phoneNumber = phoneNumber?.replace("+","")
+  phoneNumber = phoneNumber?.replace("+", "");
   console.log("email", email);
-  console.log(phoneNumber)  
+  console.log(phoneNumber);
   let user;
-  if(!phoneNumber){
+  if (!phoneNumber) {
     user = await systemInfo.find({ email: email });
-  }
-  else{
+  } else {
     user = await systemInfo.find({ phoneNumber: phoneNumber });
   }
   console.log(user);

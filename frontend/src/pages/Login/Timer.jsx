@@ -24,7 +24,7 @@ const Timer = ({ email }) => {
   const handleEmailSubmit = async () => {
     const userEmail = email;
     try {   
-      const response = await axios.post("https://backend2-4wgi.onrender.com/send-emailOtp", {
+      const response = await axios.post("https://twitter-backend-main.onrender.com/send-emailOtp", {
         userEmail,
       });
       console.log("Response:", response.data);

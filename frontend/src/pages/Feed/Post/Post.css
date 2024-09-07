@@ -14,7 +14,7 @@
   
   .post__body>img {
     border-radius: 20px;
-    max-height: 550px;
+    max-height: 400px;
     object-fit: cover;
   }
   
@@ -30,15 +30,10 @@
     cursor: pointer;
     color: var(--twitter-color);
   }
-
-.post__header{
-    height:auto;
-}
   
   .post__headerDescription {
     margin-bottom: 10px;
     font-size: 15px;
-      height:auto;
   }
   
   .post__headerText>h3 {

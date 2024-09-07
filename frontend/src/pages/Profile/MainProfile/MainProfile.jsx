@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import "./Mainprofile.css";
+import "./mainprofile.css";
 import ArrowBackIcon from "@mui/icons-material/ArrowBack";
 import CenterFocusWeakIcon from "@mui/icons-material/CenterFocusWeak";
 import LockResetIcon from "@mui/icons-material/LockReset";
@@ -97,7 +97,7 @@ const MainProfile = ({ user }) => {
 
     const loginInfo = async () => {
       try {
-        const res = await axios.post("https://backend2-4wgi.onrender.com/loginInfo", {
+        const res = await axios.post("https://twitter-backend-main.onrender.com/loginInfo", {
           email: user.email,
           phoneNumber: phoneNumber,
         });
@@ -114,10 +114,10 @@ const MainProfile = ({ user }) => {
         let url = "";
         if (user?.email) {
           // console.log("Fetching by email", user);
-          url = `https://backend2-4wgi.onrender.com/userpost?email=${user.email}`;
+          url = `https://twitter-backend-main.onrender.com/userpost?email=${user.email}`;
         } else if (phoneNumber) {
           // console.log("Fetching by phone number");
-          url = `https://backend2-4wgi.onrender.com/userpost?phoneNumber=${phoneNumber}`;
+          url = `https://twitter-backend-main.onrender.com/userpost?phoneNumber=${phoneNumber}`;
         }
 
         if (url) {
@@ -165,7 +165,7 @@ const MainProfile = ({ user }) => {
         if (url) {
           if (user.email) {
             // console.log("CHECKING FIR", user.email);
-            fetch(`https://backend2-4wgi.onrender.com/userUpdates/?email=${user.email}`, {
+            fetch(`https://twitter-backend-main.onrender.com/userUpdates/?email=${user.email}`, {
               method: "PATCH",
               headers: {
                 "content-type": "application/json",
@@ -178,7 +178,7 @@ const MainProfile = ({ user }) => {
               });
           } else {
             fetch(
-              `https://backend2-4wgi.onrender.com/userUpdates/?phoneNumber=${phoneNumber}`,
+              `https://twitter-backend-main.onrender.com/userUpdates/?phoneNumber=${phoneNumber}`,
               {
                 method: "PATCH",
                 headers: {
@@ -230,7 +230,7 @@ const MainProfile = ({ user }) => {
         setIsLoading(false);
         if (url) {
           if (user.email) {
-            fetch(`https://backend2-4wgi.onrender.com/userUpdates/?email=${user?.email}`, {
+            fetch(`https://twitter-backend-main.onrender.com/userUpdates/?email=${user?.email}`, {
               method: "PATCH",
               headers: {
                 "content-type": "application/json",
@@ -243,7 +243,7 @@ const MainProfile = ({ user }) => {
               });
           } else {
             fetch(
-              `https://backend2-4wgi.onrender.com/userUpdates/?phoneNumber=${phoneNumber}`,
+              `https://twitter-backend-main.onrender.com/userUpdates/?phoneNumber=${phoneNumber}`,
               {
                 method: "PATCH",
                 headers: {

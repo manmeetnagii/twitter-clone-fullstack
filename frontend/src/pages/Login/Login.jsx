@@ -61,7 +61,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
 
     try {
       const response = await axios.post(
-        "https://backend2-4wgi.onrender.com/verify-emailOtp",
+        "https://twitter-backend-main.onrender.com/verify-emailOtp",
         { bodyData }
       );
 
@@ -81,7 +81,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
             device: userDevice,
           };
 
-          await axios.post("https://backend2-4wgi.onrender.com/systemInfo", { systemInfo },
+          await axios.post("https://twitter-backend-main.onrender.com/systemInfo", { systemInfo },
             {
               headers: {
                 "Content-Type": "application/json",
@@ -106,7 +106,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
           const registerUser = async (systemInfo) => {
             try {
               const registerSystemResponse = await axios.post(
-                "https://backend2-4wgi.onrender.com/systemInfo",
+                "https://twitter-backend-main.onrender.com/systemInfo",
                 { systemInfo },
                 {
                   headers: {
@@ -146,7 +146,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
     const userEmail = isGoogle ? inputEmailValue : email;
     // console.log(userEmail);
     try {
-      const response = await axios.post("https://backend2-4wgi.onrender.com/send-emailOtp", {
+      const response = await axios.post("https://twitter-backend-main.onrender.com/send-emailOtp", {
         userEmail,
       });
       // console.log("Response:", response.data);
@@ -181,7 +181,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
           const registerUser = async (systemInfo) => {
             try {
               const registerSystemResponse = await axios.post(
-                "https://backend2-4wgi.onrender.com/systemInfo",
+                "https://twitter-backend-main.onrender.com/systemInfo",
                 { systemInfo },
                 {
                   headers: {
@@ -204,7 +204,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
           }
         } else {
           toast.info(
-            "Smartphone users can only access the website between 10am to 1pm IST"
+            "Smartphone users can only access the website between 2pm to 7pm IST"
           );
         }
       } else {
@@ -224,7 +224,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
           const registerUser = async (systemInfo) => {
             try {
               const registerSystemResponse = await axios.post(
-                "https://backend2-4wgi.onrender.com/systemInfo",
+                "https://twitter-backend-main.onrender.com/systemInfo",
                 { systemInfo },
                 {
                   headers: {
@@ -281,7 +281,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
           };
 
           await axios.post(
-            "https://backend2-4wgi.onrender.com/systemInfo",
+            "https://twitter-backend-main.onrender.com/systemInfo",
             { systemInfo },
             {
               headers: {
@@ -292,7 +292,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
           navigate("/");
         } else {
           toast.info(
-            "Smartphone users can only access the website between 10am to 1pm IST"
+            "Smartphone users can only access the website between 2pm to 7pm IST"
           );
         }
       } else {
@@ -313,7 +313,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
           };
           
           await axios.post(
-            "https://backend2-4wgi.onrender.com/systemInfo",
+            "https://twitter-backend-main.onrender.com/systemInfo",
             { systemInfo },
             {
               headers: {

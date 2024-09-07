@@ -9,7 +9,7 @@ function Feed() {
     const {t} = useTranslation()
 
     useEffect(() => {
-        fetch(`https://backend2-4wgi.onrender.com/post`)
+        fetch(`https://twitter-backend-main.onrender.com/post`)
             .then(res => res.json())
             .then(data => {setPosts(data)})
     }, [posts])

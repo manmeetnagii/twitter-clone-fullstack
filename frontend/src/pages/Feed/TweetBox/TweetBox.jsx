@@ -53,7 +53,7 @@ function TweetBox() {
   // Function for fetching User Data
   const fetchUserData = async (query) => {
     try {
-      const response = await fetch(`https://backend2-4wgi.onrender.com/loggedInUser?${query}`);
+      const response = await fetch(`https://twitter-backend-main.onrender.com/loggedInUser?${query}`);
       if (!response.ok) throw new Error('Network response was not ok');
         return await response.json();
       } 
@@ -102,17 +102,16 @@ function TweetBox() {
       }
   
       if (audioUrl) {
-        if(userPhoneNumber){
+        if(phoneNumber){
           toast.info("Audio uploads are only available to users registered with an email.")
-          return;
         }
-        
+        else{
           toast.info("Audio upload requires email verification.");
           await handleEmailSubmit();
-        
+        }
       } 
       else {
-        const response = await fetch(`https://backend2-4wgi.onrender.com/post`, {
+        const response = await fetch(`https://twitter-backend-main.onrender.com/post`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -140,7 +139,7 @@ function TweetBox() {
     setEmailModal(true);
     const userEmail = user.email;
     try {
-      const response = await axios.post("https://backend2-4wgi.onrender.com/send-emailOtp", {
+      const response = await axios.post("https://twitter-backend-main.onrender.com/send-emailOtp", {
         userEmail,
       });
       // console.log("Response:", response.data);
@@ -156,7 +155,7 @@ function TweetBox() {
     const userEmail = user.email;
     const bodyData = { userEmail, otp };
     try {
-      const response = await axios.post("https://backend2-4wgi.onrender.com/verify-emailOtp",
+      const response = await axios.post("https://twitter-backend-main.onrender.com/verify-emailOtp",
         { bodyData }
       );
 
@@ -176,7 +175,7 @@ function TweetBox() {
           phoneNumber: userPhoneNumber ? userPhoneNumber.replace("+", "") : null,
         };
 
-        const response = await fetch(`https://backend2-4wgi.onrender.com/post`, {
+        const response = await fetch(`https://twitter-backend-main.onrender.com/post`, {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
@@ -256,7 +255,6 @@ function TweetBox() {
       setShowRecorder(true);
     } else {
       toast.info("Audio recordings are only allowed between 2 PM to 7 PM IST.");
-      return
     }
   };
 
@@ -280,7 +278,7 @@ function TweetBox() {
 
         try {
           const response = await axios.post(
-            "https://backend2-4wgi.onrender.com/upload-audio",
+            "https://twitter-backend-main.onrender.com/upload-audio",
             formData,
             { headers: { "Content-Type": "multipart/form-data" } }
           );

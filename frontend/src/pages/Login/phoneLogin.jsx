@@ -8,7 +8,6 @@ import { useTranslation } from "react-i18next";
 import axios from "axios";
 import 'react-phone-number-input/style.css'
 import PhoneInput from 'react-phone-number-input'
-import { Bounce, toast, ToastContainer } from "react-toastify";
 import "./Login.css";
 
 function Mobile({ userBrowser, userDevice, userOS, userIP }) {
@@ -46,52 +45,27 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
     return regexp.test(value);
   };
 
-  function runBetween2To7PMIST() {
-    const now = new Date();
-
-    const UTCtoIST = 5.5 * 60 * 60 * 1000;
-    const ISTTime = new Date(now.getTime() + UTCtoIST);
-
-    const hours = ISTTime.getUTCHours();
-    const minutes = ISTTime.getUTCMinutes();
-
-    if ( (hours > 10 && hours < 13) || (hours === 10 && minutes >= 0) || (hours === 13 && minutes === 0)) {
-      return true;
-    } 
-    else {
-      return false;
-    }
-  }
-
-    const handleSendOtp = async (e) => {
-      e.preventDefault();
-      setIsLoading(true);
-      if (validatePhoneNumber()) {
-        if(!runBetween2To7PMIST()){
-          toast.info("Smartphone users can only access the website between 10am to 1pm IST")
-          setIsLoading(false);
-        }
-        else{
-          try {
-          const appVerifier = window.recaptchaVerifier;
-          const confirmationResult = await signInWithPhoneNumber(
-            auth,
-            value,
-            appVerifier
-          );
-          setConfirmResult(confirmationResult);
-          setSuccess(true);
-          setIsLoading(false);
-        } catch (error) {
-          setError(error.message);
-          setIsLoading(false);
-        }
-        }
-      } else {
-        setError("Invalid Phone Number");
+  const handleSendOtp = async (e) => {
+    e.preventDefault();
+    setIsLoading(true);
+    if (validatePhoneNumber()) {
+      try {
+        const appVerifier = window.recaptchaVerifier;
+        const confirmationResult = await signInWithPhoneNumber(
+          auth,
+          value,
+          appVerifier
+        );
+        setConfirmResult(confirmationResult);
+        setSuccess(true);
         setIsLoading(false);
+      } catch (error) {
+        setError(error.message);
       }
-    };
+    } else {
+      setError("Invalid Phone Number");
+    }
+  };
 
   const handleVerifyOtp = async (e) => {
     e.preventDefault();
@@ -111,7 +85,7 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
         const registerUser = async (systemInfo) => {
           try {
             const registerSystemResponse = await axios.post(
-              "https://backend2-4wgi.onrender.com/systemInfo",
+              "https://twitter-backend-main.onrender.com/systemInfo",
               { systemInfo },
               {
                 headers: {
@@ -216,11 +190,6 @@ function Mobile({ userBrowser, userDevice, userOS, userIP }) {
         </div>
       </div>
       <div id="recaptcha-container"></div>
-      <ToastContainer
-          position="bottom-right"
-          theme="dark"
-          transition={Bounce}
-        />
     </div>
   );
 }
