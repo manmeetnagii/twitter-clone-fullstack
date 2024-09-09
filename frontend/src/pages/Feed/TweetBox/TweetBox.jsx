@@ -63,10 +63,14 @@ function TweetBox() {
       }
   };
 
+  const handleAudiourl = () =>{
+    setAudioUrl("");
+    setShowRecorder(!showRecorder);
+  }
+
   // Function for post a tweet
   const handleTweet = async () => {
     if (post.length === 0) return;
-  
     try {
       if (user?.providerData[0]?.providerId === "password" && !isRecording) {
         // console.log("Processing user data");
@@ -102,10 +106,11 @@ function TweetBox() {
       }
   
       if (audioUrl) {
-        if(phoneNumber){
+      console.log(phoneNumber)
+        if(phoneNumber === null){
           toast.info("Audio uploads are only available to users registered with an email.")
         }
-        else{
+        else{ 
           toast.info("Audio upload requires email verification.");
           await handleEmailSubmit();
         }
@@ -252,7 +257,7 @@ function TweetBox() {
 
   const handleRecording = () => {
     if (runBetween2To7PMIST()) {
-      setShowRecorder(true);
+      setShowRecorder(!showRecorder);
     } else {
       toast.info("Audio recordings are only allowed between 2 PM to 7 PM IST.");
     }
@@ -370,7 +375,7 @@ function TweetBox() {
                   </audio>
                   <CloseIcon
                     style={{ cursor: "pointer" }}
-                    onClick={() => setAudioUrl(!audioUrl)}
+                    onClick={handleAudiourl}
                   />
                 </div>
               )}

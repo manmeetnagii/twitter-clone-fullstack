@@ -268,7 +268,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
     try {
       if (userDevice === "mobile") {
         // console.log("logging with mobile");
-        if (runBetween2To7PMIST() === false) {
+        if (runBetween2To7PMIST()) {
           const res = await googleSignIn();
           const userEmail = res.user.email;
 
@@ -292,7 +292,7 @@ const Login = ({ userBrowser, userDevice, userOS, userIP }) => {
           navigate("/");
         } else {
           toast.info(
-            "Smartphone users can only access the website between 2pm to 7pm IST"
+            "Smartphone users can only access the website between 10am to 1pm IST"
           );
         }
       } else {

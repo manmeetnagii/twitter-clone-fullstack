@@ -81,6 +81,7 @@
     border: none;
     width: 6rem;
     margin-bottom: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   }
   
   .rec-stop{
@@ -89,6 +90,7 @@
     border: none;
     width: 6rem;
     margin-bottom: 10px;
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
   }
   .w{
     display: flex;
@@ -101,6 +103,7 @@
   }
   
   .active{
+    box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.4);
     background-color: rgb(248, 214, 200);
     padding: 10px;
     border-radius: 20px;

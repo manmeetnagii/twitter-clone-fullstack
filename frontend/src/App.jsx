@@ -27,15 +27,16 @@ import MobileLogin from "./pages/Login/phoneLogin";
 function App() {
   const [locale, setLocale] = useState(i18n.language);
 
-  i18n.on("languageChanged", (lng) => setLocale(i18n.language));
+  
   const [ip, setIp] = useState('');
   const [userBrowser, setUserBrowser] = useState("");
   const [userOS, setUserOS] = useState("");
-
-
-const [userDevice, setUserDevice] = useState("");
-
-useEffect(()=>{
+  
+  
+  const [userDevice, setUserDevice] = useState("");
+  
+  useEffect(()=>{
+  i18n.on("languageChanged", (lng) => setLocale(i18n.language));
   const fetchUserAgent = async () => {
     try {
       const response = await axios.get(`https://twitter-backend-main.onrender.com/info`);
