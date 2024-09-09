@@ -4,20 +4,17 @@ import { useTranslation } from "react-i18next";
 
 const Timer = ({ email }) => {
   const [timeLeft, setTimeLeft] = useState(120);
-  // 2 minutes in seconds
 
   const {t} = useTranslation();
 
   useEffect(() => {
-    // Exit early when we reach zero
+  
     if (timeLeft === 0) return;
 
-    // Save the interval ID to clear it later
     const intervalId = setInterval(() => {
       setTimeLeft(timeLeft - 1);
     }, 1000);
 
-    // Clear the interval when the component unmounts
     return () => clearInterval(intervalId);
   }, [timeLeft]);
 
@@ -33,8 +30,7 @@ const Timer = ({ email }) => {
       console.error("There was an error in sending otp!", error);
     }
   };
-
-  // Format the time as MM:SS
+  
   const formatTime = (seconds) => {
     const minutes = Math.floor(seconds / 60);
     const remainingSeconds = seconds % 60;

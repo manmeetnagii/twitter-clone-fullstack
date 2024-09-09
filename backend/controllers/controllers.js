@@ -86,7 +86,6 @@ export const pst = async (req, res) => {
       audio,
     } = req.body;
 
-    // Create a new post
     const result = await posts.create({
       post,
       profileImage,
@@ -98,7 +97,6 @@ export const pst = async (req, res) => {
       phoneNumber,
     });
     console.log(result);
-    // Send a success response
     res.status(201).json(result);
   } catch (error) {
     console.error("Error in pst function:", error);
@@ -116,7 +114,6 @@ export const uploadAudio = async (req, res) => {
       return res.status(400).json({ error: "No audio file uploaded" });
     }
 
-    // Create a promise for the upload to use async/await syntax
     const uploadPromise = () => {
       return new Promise((resolve, reject) => {
         const uploadStream = cloudinary.uploader.upload_stream(
@@ -135,7 +132,7 @@ export const uploadAudio = async (req, res) => {
 
     const audioUpload = await uploadPromise();
     console.log(audioUpload);
-    res.status(201).json(audioUpload); // Send a proper success status code
+    res.status(201).json(audioUpload); 
   } catch (error) {
     console.error("Error in pst function:", error);
     res
@@ -147,14 +144,12 @@ export const userUpdates = async (req, res) => {
   try {
     console.log("QUERY", req.query);
     console.log("BODY", req.body);
-    // Extract email and phoneNumber from query parameters
     const email = req.query?.email;
     const phoneNumber = req.query?.phoneNumber;
 
-    // Construct filter based on provided parameters
     let filter = {};
     if (phoneNumber) {
-      filter.phoneNumber = phoneNumber; // Clean phone number if necessary
+      filter.phoneNumber = phoneNumber; 
       console.log("phoneFilter", filter);
     } else if (email) {
       filter.email = email;
@@ -165,19 +160,19 @@ export const userUpdates = async (req, res) => {
         .json({ message: "Email or phone number is required." });
     }
 
-    // Extract profile data from the request body
+   
     const profile = req.body;
 
-    // Prepare the update document
+    
     const updateDoc = { $set: profile };
     const options = { upsert: true };
 
-    // Update the document
+   
     const result = await users.updateOne(filter, updateDoc, options);
     const count = await posts.countDocuments({ email: email });
     const count2 = await posts.countDocuments({ phoneNumber: phoneNumber });
 
-    // Check if the count is not zero
+   
     if (count > 0 && count2 > 0) {
       console.log(email);
       console.log(`There are ${count} documents in the collection.`);
@@ -216,12 +211,12 @@ export const sendPhoneOtp = async (req, res) => {
     await fetch('https://gateway.seven.io/api/sms', {
       method: 'POST',
       headers: {
-        'X-Api-Key': process.env.X_RAPID_API, // Use environment variable for API key
+        'X-Api-Key': process.env.X_RAPID_API, 
         'Accept': 'application/json',
         'Content-Type': 'application/x-www-form-urlencoded'
       },
       body: new URLSearchParams({
-        to: phoneNumber,  // Use data from req.body or fallback to default
+        to: phoneNumber,  
         from: 'Twitter Clone App',
         text: `Your OTP is: ${otp}`
       })

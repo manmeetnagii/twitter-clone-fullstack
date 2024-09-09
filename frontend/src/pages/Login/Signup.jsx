@@ -61,7 +61,7 @@ const Signup = ({ userBrowser, userDevice, userOS, userIP}) => {
             device: userDevice,
           
           };
-          // Register the user
+        
           const registerUser = async (user, systemInfo) => {
             try {
               const registerSystemResponse = await axios.post(
@@ -119,7 +119,7 @@ const Signup = ({ userBrowser, userDevice, userOS, userIP}) => {
             device: userDevice,
            
           };
-          // Register the user
+       
           const registerUser = async (user, systemInfo) => {
             try {
               const registerSystemResponse = await axios.post(
@@ -216,7 +216,7 @@ const Signup = ({ userBrowser, userDevice, userOS, userIP}) => {
             device: userDevice,
             
           };
-          // Register the user
+        
           const registerUser = async (user, systemInfo) => {
             try {
               const registerSystemResponse = await axios.post(

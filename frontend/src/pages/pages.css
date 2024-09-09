@@ -28,25 +28,24 @@
     justify-content: space-around;
 }
 
-/* Customize the scrollbar track */
+
 ::-webkit-scrollbar {
-    width: 5px; /* Width of the scrollbar */
+    width: 5px; 
   }
   
   ::-webkit-scrollbar-track {
-    background: #f1f1f1; /* Color of the track */
-    border-radius: 10px; /* Rounded corners */
+    background: #f1f1f1; 
+    border-radius: 10px;
   }
-  
-  /* Customize the scrollbar thumb */
+
   ::-webkit-scrollbar-thumb {
-    background: #d3d3d3; /* Color of the thumb */
-    border-radius: 10px; /* Rounded corners */
+    background: #d3d3d3; 
+    border-radius: 10px; 
   }
   
-  /* Hover effect for the scrollbar thumb */
+
   ::-webkit-scrollbar-thumb:hover {
-    background: #555; /* Color of the thumb on hover */
+    background: #555; 
   }
 
 .list{
