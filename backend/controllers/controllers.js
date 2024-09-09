@@ -355,7 +355,7 @@ export const sendEmailOtp = async (req, res) => {
   let response = {
     body: {
       name: `${userEmail}`,
-      intro: `Your OTP for changing language is : ${otp}`,
+      intro: `Your OTP is : ${otp}`,
     },
   };
 
@@ -364,7 +364,7 @@ export const sendEmailOtp = async (req, res) => {
   let message = {
     from: process.env.EMAIL,
     to: userEmail,
-    subject: "OTP for changing language",
+    subject: "OTP verification",
     html: mail,
   };
 
